@@ -1,4 +1,4 @@
-# Mailinator
+# We Shall Javail!
 
 A silly test of some even sillier things i.e. sending email with Java
 
