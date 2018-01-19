@@ -5,7 +5,7 @@ import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
 /**
- * Unit test for simple App.
+ * Unit test for simple Main.
  */
 public class MainTest 
     extends TestCase
@@ -15,7 +15,7 @@ public class MainTest
      *
      * @param testName name of the test case
      */
-    public AppTest( String testName )
+    public MainTest( String testName )
     {
         super( testName );
     }
@@ -25,13 +25,13 @@ public class MainTest
      */
     public static Test suite()
     {
-        return new TestSuite( AppTest.class );
+        return new TestSuite( MainTest.class );
     }
 
     /**
      * Rigourous Test :-)
      */
-    public void testApp()
+    public void testMain()
     {
         assertTrue( true );
     }
