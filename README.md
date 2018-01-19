@@ -41,5 +41,3 @@ ls Maildir/new/
 cat Maildir/new/*
 ```
 You should see something that looks like an smpt message.  Congrats!
-
-
