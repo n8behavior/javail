@@ -2,7 +2,7 @@
 
 A silly test of some even sillier things i.e. sending email with Java
 
-# Setup
+## Setup
 
 First thing you'll need is a test server.  If you've got an SMTP server lying around and know how to wield it, you're good-to-go.  Otherwise, follow this steps to get a simple local mail server set up on Ubuntu 16.04...other distro/versions like work as well.
 
@@ -40,4 +40,36 @@ echo 'init' | mail -s 'init' -Snorecord $USER
 ls Maildir/new/
 cat Maildir/new/*
 ```
-You should see something that looks like an smpt message.  Congrats!
+You should see something that looks like an SMPT message.  Congrats!
+
+## Building, testing, sending
+
+Now we just need to try out the code.  Assuming you have recent version of Maven, it should go something like this
+
+```
+mvn package
+java -jar target/javail-1.0-SNAPSHOT.jar localhost jack@localhost test@example.com Hello 'This is a test email'
+```
+And checking with mail we should see something like
+```
+$ mail
+s-nail version v14.8.6.  Type ? for help.
+"/home/jack/Maildir": 1 message 1 new
+>N  1 jack@localhost     Wed Dec 31 19:00   17/525   Hello                      
+? 
+```
+And hitting `enter` here should show something like
+```
+[-- Message  1 -- 17 lines, 525 bytes --]:
+From jack@localhost Wed Dec 31 19:00:00 1969
+Date: Wed, 24 Jan 2018 12:08:43 -0500 (EST)
+From: jack@localhost
+To: test@example.com
+Message-ID: <1225358173.0.1516813723695@jackbox>
+Subject: Hello
+
+This email is a test.
+
+? 
+```
+Yeah!
