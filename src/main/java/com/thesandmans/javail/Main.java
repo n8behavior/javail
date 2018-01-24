@@ -1,16 +1,22 @@
-import java.util.*;
-import javax.mail.*;
-import javax.mail.internet.*;
-import javax.activation.*;
+package com.thesandmans.javail;
+
+import java.util.Properties;
+
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
  
 public class Main {
      
     public static void main(String[] args)
     {
         // change below lines accordingly
-        String to = args[0]; 
-        String from = args[1]; 
-        String host = "localhost"; // or IP address
+        final String to = "test@jackbox.lab.studio"; 
+        final String from = "jack@localhost"; 
+        final String host = "localhost"; // or IP address
  
         // Get the session object
         // Get system properties
